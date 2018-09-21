@@ -16,5 +16,16 @@ module.exports = {
             }
         ];
         return inquirer.prompt(questions);
+    },
+    askStarredRepos: (repos) => {
+        const questions = [
+            {
+              type: 'checkbox',
+              name: 'selectedRepos',
+              message: 'Select the repos you wish to clone:',
+              choices: repos
+            }
+          ];
+          return inquirer.prompt(questions);
     }
 }
